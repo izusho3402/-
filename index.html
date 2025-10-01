@@ -106,24 +106,18 @@
 
       fetch("https://script.google.com/macros/s/AKfycbwP9wbW8xZdCkQGS0q7ZZI8k2cIiB4UPw3AP8RwQPnSEJjB_rujVI2P4HhmFOVYDdifEg/exec", {
         method: "POST",
-        body: formData,
+        body: new FormData(this)
       })
 
-      .then(res => res.json())
-      .then(data => {
-        if (data.result === "success") {
-        alert("送信しました！");
-        document.getElementById("exchangeForm").reset();
-        document.getElementById("sumJisan").textContent = "0";
-        document.getElementById("sumKibou").textContent = "0";
-      }else{
-        alert("送信に失敗しました: ");
-      }
-    })
-    .catch(err => {
-        alert("送信に失敗しました: " + err);
+.then(res => res.text()) // JSONではなくテキストで受ける
+.then(txt => {
+  console.log("GAS response:", txt);
+  alert("レスポンス: " + txt);
+})
+.catch(err => {
+  alert("送信エラー: " + err);
+});
     });
-  });
   </script>
 </body>
 </html>
