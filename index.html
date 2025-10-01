@@ -107,10 +107,9 @@
         body: formData,
         mode: "no-cors"
       })
-      .then(res => res.text())
-      .then(text => {
+      .then(()=>{
         alert("送信しました！");
-        this.reset();
+        document.getElementById("exchangeForm").reset();
         document.getElementById("sumJisan").textContent = "0";
         document.getElementById("sumKibou").textContent = "0";
       })
