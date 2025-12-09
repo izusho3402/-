@@ -4,16 +4,6 @@
   <meta charset="UTF-8">
   <title>両替伝票</title>
   <style>
-    /* 入力欄の高さと文字位置を統一 */
-select,
-input[type="text"],
-input[type="number"] {
-  height: 40px;        /* 全部同じ高さへ */
-  padding-left: 10px;  /* 左端の位置を揃える */
-  box-sizing: border-box;
-  font-size: 18px;
-}
-
         body {
           text-align: center;
       font-family: "Yu Gothic", "Hiragino Sans", sans-serif;
@@ -104,6 +94,30 @@ input[type="number"] {
     .error[style] {
   text-align: center;
 }
+    .form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* 左揃え */
+  margin-bottom: 20px;
+}
+
+/* ラベルのデザイン */
+.form-row label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 18px;
+}
+
+/* 入力欄を統一 */
+.form-row select,
+.form-row input[type="text"] {
+  width: 250px;       /* 必要に応じて調整 */
+  padding: 6px 10px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #bbb;
+}
+
   </style>
 </head>
 <body>
@@ -113,8 +127,8 @@ input[type="number"] {
     送信エラー FULL の返答が来たときは、少し待ってから再送信してください。
   </p>
   
-  <form id="exchangeForm">
-        年組:
+<div class="form-row">
+  <label>年組:</label>
     <select name="class" required>
       <option value="">選択してください</option>
       <option value="2-1">2-1</option>
@@ -123,9 +137,16 @@ input[type="number"] {
       <option value="2-4">2-4</option>
       <option value="3-1">3-1</option>
       <option value="3-4">3-4</option>
-    </select><br><br>
-    名前: <input type="text" name="name" required><br><br>
-    店舗:
+    </select>
+</div>
+<br><br>
+    <div class="form-row">
+  <label>名前:</label>
+  <input type="text" name="name" required>
+</div>
+<br><br>
+    <div class="form-row">
+  <label>店舗:</label>
     <select name="store" required>
       <option value="">選択してください</option>
       <option value="店舗1[鮮魚]">第1店舗[鮮魚]</option>
@@ -138,7 +159,7 @@ input[type="number"] {
       <option value="店舗8[雑貨・ワークショップ]">第8店舗[雑貨・ワークショップ]</option>
       <option value="店舗9[健康食品・美容]">第9店舗[健康食品・美容]</option>
       <option value="フードコート">フードコート</option>
-    </select><br><br>
+    </select></div><br><br>
     時刻: <span id="time"></span>
     <input type="hidden" name="time" id="timeInput"><br><br>
 
@@ -229,6 +250,7 @@ input[type="number"] {
 </body>
 
 </html>
+
 
 
 
