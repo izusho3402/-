@@ -225,7 +225,7 @@
         const response = await fetch(scriptURL, { method: "POST", body: formData });
         const result = await response.text();
         if (result === "success") {
-          alert("送信しました！");
+          alert("送信完了");
           form.reset();
           updateTime();
           document.getElementById("sumJisan").textContent = "0";
@@ -241,6 +241,7 @@
 </body>
 
 </html>
+
 
 
 
