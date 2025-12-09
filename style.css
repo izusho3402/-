@@ -1,0 +1,75 @@
+body {
+    font-family: "Yu Gothic", "Hiragino Sans", sans-serif;
+    background: #f5f5f5;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;   /* 中央寄せ */
+    align-items: flex-start;   /* 上部から中央寄せ（中央だと縦長になる可能性があるため） */
+    min-height: 100vh;
+    font-size: 18px;           /* 全体の文字サイズを調整 */
+  }
+  
+  form {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-top: 30px;
+    width: 90%;
+    max-width: 700px;          /* 中央の箱の最大幅 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  
+  select, input[type="text"], input[type="number"] {
+    font-size: 18px;           /* 入力欄の文字サイズアップ */
+    padding: 6px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  th {
+    background: #eaeaea;
+  }
+  
+  button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background: #4CAF50;
+    color: white;
+    font-size: 20px;     /* ボタンの文字大きく */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  button:hover {
+    background: #43a047;
+  }
+  
+  .error {
+    color: red;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+  }
+  
