@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    text-aligen: center;
     justify-content: center;   /* 中央寄せ */
     align-items: flex-start;   /* 上部から中央寄せ（中央だと縦長になる可能性があるため） */
     min-height: 100vh;
@@ -72,4 +73,5 @@ body {
     font-weight: bold;
     text-align: center;
   }
+
   
